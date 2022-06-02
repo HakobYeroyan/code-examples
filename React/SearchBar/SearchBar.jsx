@@ -1,16 +1,16 @@
-import React, {useEffect, useState, useRef, useMemo} from 'react';
-import {useLocation} from 'react-router-dom';
-import {Col, Input, Spin} from 'antd';
-import {SearchOutlined} from '@ant-design/icons';
-import {SwitchTransition, CSSTransition} from "react-transition-group";
+import React, { useEffect, useState, useRef, useMemo } from 'react';
+import { useLocation } from 'react-router-dom';
+import { Col, Input, Spin } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+import { SwitchTransition, CSSTransition } from "react-transition-group";
 
 // Components
 import SearchResults from './SearchResults';
 import EmptyListMessage from '../../../EmptyListMessage/EmptyListMessage';
 
 // Utils
-import {search} from '@models/search';
-import {getResults} from './SearchBar.config';
+import { search } from '@models/search';
+import { getResults } from './SearchBar.config';
 
 // Hooks
 import useDebounce from '@hooks/useDebounce';
@@ -58,7 +58,7 @@ const SearchBar = () => {
     const handleSearch = async (value) => {
         try {
             SetLoading(true);
-            const {data} = await search.searchValue(value);
+            const { data } = await search.searchValue(value);
             SetDataSource(data);
         } catch (e) {
             console.log(e);
@@ -81,7 +81,7 @@ const SearchBar = () => {
     return (
         <Col span={20} className="search_bar">
             <div ref={ref}>
-                <SearchOutlined style={{fontSize: '1.1vw', marginRight: '1vw', color: '#2A1B7E'}}/>
+                <SearchOutlined style={{ fontSize: '1.1vw', marginRight: '1vw', color: '#2A1B7E' }} />
                 {/*WE can use "loading" prop for search bar*/}
                 <Search
                     onClick={handleClickSearch}
@@ -96,7 +96,7 @@ const SearchBar = () => {
                         timeout={500}
                         classNames="animation"
                     >
-                        <div className="search_results_container" style={{display: value ? 'block' : 'none'}}>
+                        <div className="search_results_container" style={{ display: value ? 'block' : 'none' }}>
                             <SwitchTransition>
                                 <CSSTransition
                                     timeout={500}
@@ -112,7 +112,7 @@ const SearchBar = () => {
                                                     );
                                                 })
                                             ) : (
-                                                <EmptyListMessage message="No results found"/>
+                                                <EmptyListMessage message="No results found" />
                                             )
                                         ) : (
                                             <div className="search_results_spinner_container">
