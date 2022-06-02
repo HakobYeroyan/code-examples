@@ -1,0 +1,243 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.search_results_check_in {
+  transition: box-shadow 0.3s ease-in-out;
+  margin-bottom: 0.4vw;
+  box-shadow: $box-shadow-secondary;
+  border-radius: 4.4px;
+  background-color: #ffffff;
+  border: 1.094px solid $primary-border-color;
+  padding: 1.65vw 1.25vw;
+  display: flex;
+  @include flex-box(space-between, center, row);
+  color: rgba(0, 0, 0, 0.65);
+  flex-wrap: wrap;
+
+  .meeting_short_info {
+    width: 80%;
+    position: relative;
+    display: flex;
+    @include flex-box(flex-start, center, row);
+
+    .avatar_img_wrapper {
+      position: absolute;
+      left: -1.85vw;
+      width: 1.14vw;
+      height: 1.14vw;
+
+      .avatar_img {
+        display: block;
+        @include img-styles(100%, 100%, cover, 50%);
+      }
+    }
+
+    div.avatar_skeleton {
+      width: 1.14vw;
+      height: 1.14vw;
+
+      span {
+        width: 1.14vw;
+        height: 1.14vw;
+      }
+    }
+
+    p {
+      width: 75%;
+      line-height: normal;
+      margin: 0;
+      @include text-styles(0.818vw, 500, $user-profile-name-color, left, $primary-font-family);
+      @include text-elipses();
+    }
+
+    .meeting_attached_users {
+      margin-left: auto;
+      display: inline-flex;
+      @include flex-box(flex-end, center, row);
+
+      .meeting_attached_user {
+        width: 1.14vw;
+        height: 1.14vw;
+
+        &:not(:last-child) {
+          margin-right: 0.364vw;
+        }
+
+        .avatar_img {
+          display: block;
+          @include img-styles(100%, 100%, cover, 50%);
+        }
+      }
+
+      .user_counter {
+        margin-left: 0.364vw;
+      }
+    }
+  }
+
+  .meeting_actions {
+    display: flex;
+    @include flex-box(center, center, row);
+
+    div {
+      display: flex;
+      @include flex-box(space-between, center, row);
+
+      .calendar {
+        margin-right: 0.3vw;
+        @include icon-styles(1.2vw, 1.1vw, "icon-calendar.svg", auto);
+      }
+
+      p {
+        margin-bottom: 0;
+        line-height: 1;
+        @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.55vw $filter-remove-btn-color;
+    color: rgba(0, 0, 0, 0.65);
+  }
+}
+
+.check_in_search_results_items {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  margin-top: 0.5vw;
+  @include flex-box(flex-start, flex-start, column);
+}
+.check_in_search_results_item_title {
+  margin-bottom: 0;
+  @include text-elipses();
+  @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+}
+
+@include tablet-media {
+  .search_results_check_in {
+    padding: 2.474vw 2.214vw 2.474vw 3.906vw;
+
+    .meeting_short_info {
+      width: 65%;
+
+      .avatar_img_wrapper {
+        left: -5.5vw;
+        width: 3.646vw;
+        height: 3.646vw;
+      }
+
+      div.avatar_skeleton {
+        width: 3.646vw;
+        height: 3.646vw;
+
+        span {
+          width: 3.646vw;
+          height: 3.646vw;
+        }
+      }
+
+      p {
+        width: 49%;
+        font-size: 2.474vw;
+      }
+
+      .meeting_attached_users {
+        .meeting_attached_user {
+          width: 2.604vw;
+          height: 2.604vw;
+
+          &:not(:last-child) {
+            margin-right: 0.7vw;
+          }
+        }
+
+        .user_counter {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .meeting_actions div {
+      .calendar {
+        margin-right: 1vw;
+        width: 2.604vw;
+        height: 2.604vw;
+      }
+      p {
+        font-size: 2.083vw;
+      }
+    }
+  }
+
+  .check_in_search_results_item_title {
+    font-size: 2.083vw;
+  }
+}
+
+@include mobile-media {
+  .search_results_check_in {
+    padding: 3.5vw 3vw 3.5vw 7vw;
+
+    .meeting_short_info {
+      width: 100%;
+
+      .avatar_img_wrapper {
+        left: -10.8vw;
+        width: 7.467vw;
+        height: 7.467vw;
+      }
+
+      div.avatar_skeleton {
+        width: 7.467vw;
+        height: 7.467vw;
+
+        span {
+          width: 7.467vw;
+          height: 7.467vw;
+        }
+      }
+
+      p {
+        width: 53%;
+        font-size: 5.067vw;
+      }
+
+      .meeting_attached_users {
+        .meeting_attached_user {
+          width: 5.333vw;
+          height: 5.333vw;
+
+          &:not(:last-child) {
+            margin-right: 1vw;
+          }
+        }
+
+        .user_counter {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .meeting_actions {
+      margin-top: 2vw;
+
+      div {
+        .calendar {
+          margin-right: 2.3vw;
+          width: 5.333vw;
+          height: 4.899vw;
+        }
+        p {
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+
+  .check_in_search_results_item_title {
+    font-size: 4vw;
+  }
+}

@@ -1,0 +1,10 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.people_search_results {
+  width: 100%;
+  display: flex;
+  @include flex-box(flex-start, stretch, row);
+  flex-wrap: wrap;
+  margin: 0 !important;
+}

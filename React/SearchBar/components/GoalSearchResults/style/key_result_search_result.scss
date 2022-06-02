@@ -1,0 +1,201 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.search_results_key_result {
+  @include flex-box(center, center, row);
+  margin-bottom: 0.23vw;
+  box-shadow: $box-shadow-secondary;
+  border: 1.094px solid $primary-border-color;
+  border-radius: 0.2vw;
+
+  & > div.item_main_content {
+    border-radius: 0.2vw;
+    padding: 1.28vw 0.91vw 1.28vw 1.37vw;
+    background-color: white;
+    line-height: 1;
+    position: relative;
+    display: flex;
+    @include flex-box(space-between, center, row);
+  }
+
+  .title_sect {
+    flex: 2.5;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 0.6vw;
+    line-height: initial;
+    @include flex-box(flex-start, center, row);
+    @include text-elipses();
+    @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+
+    .img_container {
+      position: absolute;
+      left: -0.54vw;
+      top: 34%;
+      width: 1.14vw;
+      height: 1.14vw;
+      display: flex;
+      @include flex-box(center, center, row);
+
+      img {
+        @include img-styles(1.14vw, 1.14vw, cover, 50%);
+      }
+
+      div.avatar_skeleton {
+        width: 1.14vw;
+        height: 1.14vw;
+
+        span {
+          width: 1.14vw;
+          height: 1.14vw;
+        }
+      }
+    }
+  }
+
+  .status_sect {
+    padding: 0 0.92vw;
+    display: flex;
+    @include flex-box(flex-start, center, row);
+
+    .status_badge {
+      padding: 0 0.41vw;
+      border-radius: 3.3px;
+      line-height: 1;
+      min-height: 1.18vw;
+      background-color: $on-track-indicator-color; // set by default
+      display: flex;
+      @include flex-box(center, center, row);
+      @include text-styles(0.55vw, 600, white, center, $primary-font-family);
+
+      &.completed {
+        background-color: $exceeded-indicator-color;
+      }
+      &.overdue {
+        background-color: #FD6E89;
+      }
+    }
+  }
+
+  .item_main_content {
+    .progress_sect {
+      flex: 1.1;
+    }
+
+    .deadline {
+      flex: 0;
+      display: flex;
+      @include flex-box(flex-start, center, row);
+
+      .day_counts {
+        margin: 0 0.25vw;
+
+        &.OffTrack {
+          color: $off-track-indicator-color;
+        }
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@include tablet-media {
+  .search_results_key_result {
+    border-radius: 0.651vw;
+
+    & > div.item_main_content {
+      border-radius: 0.651vw;
+      padding: 3vw 2.604vw 3vw 3.906vw;
+    }
+
+    .title_sect {
+      margin-right: 0.6vw;
+      font-size: 2.344vw;
+
+      .img_container {
+        left: -1.3vw;
+        top: 37%;
+        width: 2.604vw;
+        height: 2.604vw;
+
+        img, div.avatar_skeleton,
+        div.avatar_skeleton span {
+          width: 2.604vw;
+          height: 2.604vw;
+        }
+      }
+    }
+    .status_sect {
+      padding: 0 1.5vw 0 0;
+
+      .status_badge {
+        font-size: 1.432vw;
+        padding: 0 1.107vw;
+        min-height: 3.385vw;
+      }
+    }
+
+    .item_main_content {
+      .deadline .day_counts {
+        margin: 0 0.651vw;
+      }
+    }
+  }
+}
+
+@include mobile-media {
+  .search_results_key_result {
+    border-radius: 0.651vw;
+
+    & > div.item_main_content {
+      border-radius: 0.651vw;
+      padding: 3vw 2.604vw 3vw 4.95vw;
+      flex-wrap: wrap;
+    }
+
+    .title_sect {
+      flex: unset;
+      margin-right: 0;
+      font-size: 5.067vw;
+      width: 100%;
+      margin-bottom: 3.2vw;
+
+      .img_container {
+        left: -3.3vw;
+        top: 13%;
+        width: 6.933vw;
+        height: 6.933vw;
+
+        img, div.avatar_skeleton,
+        div.avatar_skeleton span {
+          width: 6.933vw;
+          height: 6.933vw;
+        }
+      }
+    }
+    .status_sect {
+      padding: 0 1.5vw 0 0;
+
+      .status_badge {
+        min-height: 6.933vw;
+        padding: 0 2.267vw;
+        font-size: 2.933vw;
+      }
+    }
+
+    .item_main_content {
+      .deadline {
+        margin: 0;
+
+        .day_counts {
+          font-size: 4vw;
+          margin: 0 1.6vw;
+        }
+      }
+    }
+  }
+}

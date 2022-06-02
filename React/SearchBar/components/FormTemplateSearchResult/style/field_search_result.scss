@@ -1,0 +1,141 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.field_search_result {
+  padding: 0 1.1vw 0 1.85vw;
+  height: 3.2vw;
+  background-color: $secondary-menu-item-color;
+  border-bottom: 1px solid $primary-border-color;
+  border-top: 0;
+  border-right: 0.05vw solid $primary-border-color;
+  border-left: 0.05vw solid $primary-border-color;
+  display: flex;
+  width: 100%;
+  @include flex-box(space-between, center, row);
+
+  &:last-child {
+    border-bottom-right-radius: 0.3vw;
+    border-bottom-left-radius: 0.3vw;
+    border-bottom: 1px solid $primary-border-color;
+  }
+
+  .field_short_info {
+    display: flex;
+    @include flex-box(flex-start, center, row);
+
+    h3 {
+      margin-right: 0.6vw;
+      margin-bottom: 0;
+      @include text-styles(0.78vw, 500, $user-profile-name-color, left, $primary-font-family);
+      @include text-elipses();
+      max-width: 48vw;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 1;
+      margin-left: 1.2vw;
+      @include text-styles(0.65vw, 500, $role-color, left, $primary-font-family);
+    }
+
+    span {
+      height: 1.2vw;
+      display: flex;
+      @include flex-box(center, center, row);
+      line-height: 1;
+      padding: 0 0.35vw;
+      margin-right: 0.25vw;
+      border-radius: 2.2px;
+      @include text-styles(0.55vw, 600, white, center, $primary-font-family);
+    }
+
+    .mandatory {
+      background: $mandatory-field-color;
+    }
+
+    .text {
+      background: $text-field-color;
+    }
+
+    .grading {
+      background: $grading-field-color;
+    }
+
+    .long_text {
+      background: $long-text-color;
+    }
+
+    .range {
+      background: $status-bar-problems-color;
+    }
+
+    .single_choice {
+      background: $active-item-color;
+    }
+
+    .multi_choice {
+      background: $badge-direct;
+    }
+  }
+}
+
+@include tablet-media {
+  .field_search_result {
+    padding: 0 1.4vw 0 2vw;
+    height: 6.5vw;
+
+    .field_short_info {
+      h3 {
+        margin-right: 1.302vw;
+        font-size: 2.234vw;
+        max-width: 19vw;
+      }
+
+      p {
+        margin-left: 0.8vw;
+        font-size: 1.823vw;
+      }
+
+      span {
+        height: 3.424vw;
+        padding: 0 1vw;
+        margin-right: 0.716vw;
+        font-size: 1.563vw;
+      }
+    }
+  }
+}
+
+@include mobile-media {
+  .field_search_result {
+    padding: 3vw 5vw;
+    height: unset;
+
+    .field_short_info {
+      width: 100%;
+      flex-wrap: wrap;
+
+      h3 {
+        max-width: 83vw;
+        width: 100%;
+        margin-right: 0;
+        font-size: 4.576vw;
+        margin-bottom: 2.5vw;
+      }
+
+      p {
+        width: 100%;
+        margin-top: 2.5vw;
+        margin-left: 0;
+        font-size: 3.733vw;
+      }
+
+      span {
+        height: 7.013vw;
+        padding: 0 2.05vw;
+        margin-right: 1.467vw;
+        font-size: 3.2vw;
+      }
+    }
+  }
+}

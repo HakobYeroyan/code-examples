@@ -1,0 +1,508 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.search_results_goal {
+  display: inline-block;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.65);
+
+  &.inactive_goal {
+    & > div {
+      box-shadow: $box-shadow-secondary;
+      opacity: 0.6;
+      border-color: $adding-sect-border-color;
+      border-width: 2.625px;
+      background: $inactive-item-background;
+    }
+  }
+
+  & > div {
+    height: 100%;
+    transition: box-shadow 0.4s ease-in-out;
+    background-color: white;
+    padding: 1.52vw 0.8vw 1.52vw 2.05vw;
+    box-shadow: $box-shadow-secondary;
+    border: 1.094px solid $primary-border-color;
+    border-radius: 6.6px;
+    position: relative;
+    display: flex;
+    @include flex-box(flex-start, center, row);
+    flex-wrap: wrap;
+
+    .inactive_badge {
+      padding: 0.34vw;
+      line-height: 1;
+      border-radius: 3.3px;
+      background: $secondary-text-color;
+      margin-right: 0.5vw;
+      text-transform: uppercase;
+      @include text-styles(0.6vw, 600, white, center, $primary-font-family);
+    }
+
+    .img_container {
+      position: absolute;
+      left: -0.56vw;
+      width: 1.14vw;
+      height: 1.14vw;
+      display: flex;
+      @include flex-box(center, center, row);
+
+      .creator_img {
+        @include img-styles(1.14vw, 1.14vw, cover, 50%);
+      }
+
+      div.avatar_skeleton {
+        width: 1.14vw;
+        height: 1.14vw;
+
+        span {
+          width: 1.14vw;
+          height: 1.14vw;
+        }
+      }
+    }
+
+    .count_btn {
+      white-space: nowrap;
+      cursor: pointer;
+      background: transparent;
+      border: none;
+      outline: none;
+      @include text-styles(0.82vw, 500, $role-color, left, $primary-font-family);
+
+      &:hover {
+        color: $user-profile-name-color;
+        text-decoration: underline;
+      }
+    }
+
+    .goal_name {
+      display: flex;
+      flex: 3;
+      white-space: nowrap;
+      overflow: hidden;
+      @include flex-box(flex-start, center, row);
+
+      .lock {
+        margin-left: 0.55vw;
+        display: flex;
+        @include flex-box(center, center, row);
+        @include icon-styles(1vw, 1.3vw, "icon-private.svg", auto);
+      }
+
+      .goal_link {
+        max-width: 72%;
+        cursor: pointer;
+        margin-bottom: 0;
+        @include text-elipses();
+        @include text-styles(0.87vw, 500, $user-profile-name-color, left, $primary-font-family);
+      }
+
+      .company_badge {
+        margin: 0 0.45vw;
+        background: $company-badge-color;
+        border-radius: 0.2vw;
+        display: inline-block;
+        padding: 0.25vw 0.35vw;
+        line-height: 1;
+        @include text-styles(0.6vw, 600, white, center, $primary-font-family);
+      }
+    }
+
+
+    .assigned_users_sect, .assigned_teams_sect {
+      flex: 1;
+      padding-right: 1.4vw;
+      display: flex;
+      @include flex-box(flex-end, center, row);
+
+      > div {
+        display: flex;
+        @include flex-box(center, center, row);
+      }
+
+      img {
+        margin-left: 0.2vw;
+        @include img-styles(1.09vw, 1.09vw, cover, 50%);
+      }
+
+      div.avatar_skeleton {
+        width: 1.09vw;
+        height: 1.09vw;
+        margin-left: 0.2vw;
+
+        span {
+          width: 1.09vw;
+          height: 1.09vw;
+        }
+      }
+
+      .count_btn {
+        line-height: 1;
+        margin-left: 0.35vw;
+      }
+    }
+
+    .assigned_teams_sect {
+      padding-right: 0.5vw;
+    }
+
+    .team_badge {
+      text-align: center;
+      max-width: 4.5vw;
+      min-width: 4vw;
+      @include text-elipses();
+      line-height: 1;
+      margin-left: 0.45vw;
+      font-size: 0.6vw;
+      border-radius: 4.4px;
+      padding: 0.25vw 0.35vw;
+      font-weight: 600;
+      border-width: 1.094px;
+      border-style: solid;
+    }
+
+    .progress_sect {
+      flex: 2.5;
+      display: flex;
+      @include flex-box(center, center, row);
+
+      .percent_value {
+        display: inline-block;
+        margin-left: 0.87vw;
+        line-height: 1.364vw;
+        @include text-styles(1.19vw, 400, $user-profile-name-color, left, $primary-font-family);
+      }
+    }
+
+    .goal_status {
+      padding: 0 0.92vw;
+      display: flex;
+      @include flex-box(center, center, row);
+      align-self: center;
+
+      & > span {
+        padding: 0 0.41vw;
+        border-radius: 0.15vw;
+        line-height: 1;
+        min-height: 1.18vw;
+        display: flex;
+        @include flex-box(center, center, row);
+        @include text-styles(0.55vw, 600, white, center, $primary-font-family);
+      }
+
+      .AtRisk {
+        background-color: $at-risk-indicator-color;
+      }
+
+      .OnTrack {
+        background-color: $on-track-indicator-color;
+      }
+
+      .OffTrack {
+        background-color: $off-track-indicator-color;
+      }
+
+      .Exceeded, .Completed {
+        background-color: $exceeded-indicator-color;
+      }
+    }
+
+    .deadline {
+      flex: 1;
+      display: flex;
+      @include flex-box(flex-start, center, row);
+
+      .day_counts {
+        white-space: nowrap;
+        margin: 0 0.25vw;
+        @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+      }
+
+      .day_counts.OffTrack {
+        color: $off-track-indicator-color;
+      }
+
+      .day_counts.AtRisk {
+        color: $at-risk-indicator-color;
+      }
+    }
+
+    .goal_item_actions {
+      flex: 1;
+      display: flex;
+      z-index: 2;
+      @include flex-box(flex-end, center, row);
+
+      .hidden {
+        visibility: hidden;
+      }
+    }
+  }
+
+  &:hover {
+    & > div {
+      box-shadow: $box-shadow-selected;
+    }
+  }
+}
+
+@include tablet-media {
+  .search_results_goal {
+    & > div {
+      padding: 2.604vw 1.3vw 2.604vw 3.004vw;
+
+      .inactive_badge {
+        font-size: 1.432vw;
+        padding: 0.84vw;
+        margin-right: 1.3vw;
+      }
+
+      .img_container {
+        left: -1.85vw;
+        width: 3.646vw;
+        height: 3.646vw;
+
+        .creator_img,
+        div.avatar_skeleton,
+        div.avatar_skeleton span {
+          width: 3.646vw;
+          height: 3.646vw;
+        }
+      }
+
+      .goal_name {
+        flex: unset;
+        width: 100%;
+        margin-bottom: 1.302vw;
+
+        .lock {
+          margin-left: 1.1vw;
+          width: 2.865vw;
+          height: 3.776vw;
+        }
+
+        .goal_link {
+          max-width: 77%;
+          font-size: 2.604vw;
+        }
+
+        .company_badge {
+          margin: 0 1vw;
+          font-size: 1.719vw;
+          padding: 0.5vw 0.6vw;
+          border-radius: 0.391vw;
+        }
+      }
+
+      .assigned_users_sect, .assigned_teams_sect {
+        flex: unset;
+        width: unset;
+        padding-right: 0;
+
+        img, div.avatar_skeleton {
+          width: 2.604vw;
+          height: 2.604vw;
+          margin-left: 0.391vw;
+        }
+
+        div.avatar_skeleton span {
+          width: 2.604vw;
+          height: 2.604vw;
+        }
+
+        .count_btn {
+          font-size: 1.849vw;
+          padding: 0;
+          margin-left: 0.7vw;
+        }
+      }
+      .assigned_users_sect {
+        margin-right: 1.5vw;
+      }
+      .assigned_teams_sect {
+        width: 100%;
+        justify-content: flex-start;
+        padding-right: 0;
+        margin-bottom: 1.302vw;
+      }
+      .team_badge {
+        max-width: unset;
+        margin-left: 0.7vw;
+        font-size: 1.719vw;
+        padding: 0.716vw 1.003vw;
+
+        &:first-child {
+          margin-left: 0;
+        }
+      }
+
+      .progress_sect {
+        display: none;
+      }
+
+      .goal_status {
+        padding: 0 1.5vw 0 0;
+
+        & > span {
+          font-size: 1.432vw;
+          padding: 0 1.107vw;
+          min-height: 3.385vw;
+          border-radius: 0.43vw;
+        }
+      }
+
+      .deadline {
+        .timer_icon {
+          width: 2.474vw;
+          height: 2.732vw;
+        }
+        .warning_notifier {
+          width: 1.953vw;
+          height: 1.953vw;
+          font-size: 1.5vw;
+          display: inline-flex;
+          @include flex-box(center, center, row);
+          top: -14%;
+          right: -35%;
+        }
+        .day_counts {
+          margin: 0 0.651vw;
+          font-size: 2.083vw;
+        }
+        .deadline_secondary_text {
+          margin: 0;
+          font-size: 2.083vw;
+        }
+      }
+    }
+  }
+}
+
+@include mobile-media {
+  .search_results_goal {
+    & > div {
+      padding: 5vw 6.133vw 5vw 7.733vw;
+
+      .inactive_badge {
+        font-size: 2.933vw;
+        padding: 1.8vw;
+        margin-right: 2vw;
+      }
+
+      .img_container {
+        left: -3.8vw;
+        width: 7.467vw;
+        height: 7.467vw;
+
+        .creator_img,
+        div.avatar_skeleton,
+        div.avatar_skeleton span {
+          width: 7.467vw;
+          height: 7.467vw;
+        }
+      }
+
+      .goal_name {
+        flex: unset;
+        width: 100%;
+        margin-bottom: 0;
+
+        .lock {
+          margin-left: 2vw;
+          width: 4.1vw;
+          height: 4.1vw;
+        }
+
+        .goal_link {
+          max-width: 93%;
+          font-size: 5.067vw;
+        }
+
+        .company_badge {
+          font-size: 3.3vw;
+          padding: 1vw 1.5vw;
+          border-radius: 0.8vw;
+          margin: 0 0 0 2vw;
+        }
+      }
+
+      .assigned_users_sect, .assigned_teams_sect {
+        flex: unset;
+        width: 100%;
+        margin-top: 2.933vw;
+        padding: 0;
+        justify-content: flex-start;
+
+        img, div.avatar_skeleton {
+          width: 5.333vw;
+          height: 5.333vw;
+          margin-left: 0.8vw;
+        }
+
+        div.avatar_skeleton span {
+          width: 5.333vw;
+          height: 5.333vw;
+        }
+
+        .count_btn {
+          font-size: 4.811vw;
+          margin-left: 2.053vw;
+        }
+      }
+      .team_badge {
+        font-size: 3.3vw;
+        max-width: 30vw;
+        padding: 1vw 1.5vw;
+        border-radius: 0.8vw;
+        margin: 0 2.64vw 0 0;
+      }
+
+      .progress_sect {
+        display: none;
+      }
+
+      .goal_status {
+        margin-top: 2.933vw;
+        padding: 0;
+
+        & > span {
+          font-size: 2.933vw;
+          padding: 0 2.267vw;
+          min-height: 6.933vw;
+          border-radius: 0.88vw;
+        }
+      }
+
+      .deadline {
+        margin-top: 2.933vw;
+        margin-left: 1.5vw;
+
+        .timer_icon {
+          width: 5.088vw;
+          height: 5.621vw;
+        }
+        .warning_notifier {
+          width: 4vw;
+          height: 4vw;
+          font-size: 3vw;
+          display: inline-flex;
+          @include flex-box(center, center, row);
+          top: -14%;
+          right: -35%;
+        }
+        .day_counts {
+          color: #100841;
+          font-weight: 300;
+          font-size: 4vw;
+          margin-left: 1.845vw;
+          margin-right: 1.067vw;
+        }
+        .deadline_secondary_text {
+          margin: 0;
+          font-size: 4vw;
+        }
+      }
+    }
+  }
+}

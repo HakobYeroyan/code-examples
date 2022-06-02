@@ -1,0 +1,196 @@
+@import '../../../../../assets/styles/vars';
+@import '../../../../../assets/styles/mixins';
+
+.search_results_container {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 3;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 3px $secondary-border-color;
+  padding: 0 0.727vw 0.727vw;
+  max-height: calc(100vh - 6vw);
+  overflow: auto;
+
+  .empty_data_warning {
+    margin-top: 0.727vw;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.82vw;
+    height: 0.82vw;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border: 0.3vw solid transparent;
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: $btn-secondary-color;
+    -webkit-box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  &::-webkit-scrollbar-button {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+}
+.search_results_section {
+  margin-top: 0.727vw;
+}
+.search_results_list, .search_results_sub_list {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0.727vw;
+  margin-top: 0.545vw;
+}
+.search_results_item {
+  &:not(:last-child) {
+    margin-bottom: 0.455vw;
+  }
+}
+.search_results_title {
+  display: flex;
+  @include flex-box(flex-start, center, row);
+  border-bottom: $adding-sect-input-color solid 0.091vw;
+  width: 100%;
+  margin-bottom: 0.455vw;
+}
+.search_results_label {
+  margin: 0.2vw 0 0 0.545vw;
+  @include text-styles(1.091vw, 600, $adding-sect-input-color, left, $primary-font-family);
+  display: block;
+}
+
+.search_results_sub_section {
+  width: 100%;
+  padding-left: 0.727vw;
+  margin-top: 0.455vw;
+}
+.search_results_sub_label {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid $secondary-color;
+  margin: 0;
+  @include text-styles(0.92vw, 500, $secondary-color, left, $primary-font-family);
+}
+.search_results_sub_list {
+  width: 100%;
+  display: flex;
+  @include flex-box(flex-start, flex-start, column);
+}
+.search_results_sub_item {
+  width: 100%;
+
+  &:not(:last-child) {
+    margin-bottom: 0.636vw;
+  }
+}
+.search_results_sub_item_title {
+  margin: 0;
+}
+
+@include tablet-media {
+  .search_results_container {
+    padding: 0 1.563vw 1.563vw;
+    max-height: calc(100vh - 13vw);
+
+    .empty_data_warning {
+      margin-top: 1.563vw;
+    }
+  }
+  .search_results_section {
+    margin-top: 1.563vw;
+  }
+  .search_results_list, .search_results_sub_list {
+    padding-left: 1.823vw;
+    margin-top: 1.549vw;
+  }
+  .search_results_item {
+    &:not(:last-child) {
+      margin-bottom: 1.302vw;
+    }
+  }
+  .search_results_title {
+    border-width: 0.2vw;
+    margin-bottom: 1.302vw;
+
+    svg {
+      width: 3.723vw;
+      height: 3.149vw;
+    }
+  }
+  .search_results_label {
+    margin: 0.35vw 0 0 1.042vw;
+    font-size: 3.125vw;
+  }
+
+  .search_results_sub_section {
+    padding-left: 1.823vw;
+    margin-top: 1.302vw;
+  }
+  .search_results_sub_label {
+    font-size: 2.035vw;
+  }
+  .search_results_sub_item {
+    &:not(:last-child) {
+      margin-bottom: 1.823vw;
+    }
+  }
+}
+
+@include mobile-media {
+  .search_results_container {
+    padding: 0 2.1vw 2.1vw;
+    max-height: calc(100vh - 18.967vw);
+
+    .empty_data_warning {
+      margin-top: 2.1vw;
+    }
+  }
+  .search_results_section {
+    margin-top: 2.7vw;
+  }
+  .search_results_list, .search_results_sub_list {
+    padding-left: 2.1vw;
+    margin-top: 4vw;
+  }
+  .search_results_item {
+    &:not(:last-child) {
+      margin-bottom: 3vw;
+    }
+  }
+  .search_results_title {
+    margin-bottom: 1.7vw;
+
+    svg {
+      width: 6.6vw;
+      height: 5.427vw;
+    }
+  }
+  .search_results_label {
+    margin: 0.35vw 0 0 2vw;
+    font-size: 5.12vw;
+  }
+
+  .search_results_sub_section {
+    padding-left: 2.1vw;
+    margin-top: 1.7vw;
+  }
+  .search_results_sub_label {
+    font-size: 4.133vw;
+  }
+  .search_results_sub_item {
+    &:not(:last-child) {
+      margin-bottom: 2.8vw;
+    }
+  }
+}

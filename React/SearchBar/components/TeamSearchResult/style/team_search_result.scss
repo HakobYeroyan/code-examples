@@ -1,0 +1,250 @@
+@import '../../../../../../../assets/styles/vars';
+@import '../../../../../../../assets/styles/mixins';
+
+.team_search_result {
+  width: 100%;
+  display: inline-block;
+  transition: box-shadow 0.3s ease-in-out;
+
+  .item_main_content {
+    height: 4.539vw;
+    box-shadow: $box-shadow-secondary;
+    border-radius: 4.4px;
+    background: white;
+    border: 0.05vw solid $primary-border-color;
+    padding: 0 1.05vw 0 1.85vw;
+    display: flex;
+    @include flex-box(space-between, center, row);
+
+    .team_short_info {
+      flex: 2;
+      display: flex;
+      @include flex-box(flex-start, center, row);
+
+      .name_sect {
+        flex: 2.8;
+        display: flex;
+        @include flex-box(flex-start, center, row);
+
+        h3 {
+          cursor: pointer;
+          line-height: initial;
+          display: inline-block;
+          max-width: 18vw;
+          margin-bottom: 0;
+          margin-right: 0.55vw;
+          text-transform: capitalize;
+          @include text-styles(1vw, 500, $user-profile-name-color, left, $primary-font-family);
+          @include text-elipses();
+        }
+
+        .color_sect {
+          width: 11px;
+          height: 11px;
+          border-radius: 50%;
+          border-width: 0.05vw;
+          border-style: solid;
+        }
+      }
+
+      .count_sect {
+        flex: 3.5;
+        padding-left: 2.65vw;
+        display: flex;
+        @include flex-box(flex-start, center, row);
+
+        span {
+          white-space: nowrap;
+          margin-right: 0.955vw;
+          line-height: 1;
+          @include text-styles(0.64vw, 500, $role-color, left, $primary-font-family);
+
+          strong {
+            @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+          }
+
+          &:last-child {
+            margin-left: 0;
+          }
+        }
+      }
+
+      .users_by_role {
+        flex: 6;
+        display: flex;
+        @include flex-box(flex-start, center, row);
+
+        > div {
+          display: flex;
+          @include flex-box(flex-start, center, row);
+
+          span {
+            border: 0.05vw solid $role-color-secondary;
+            border-radius: 0.15vw;
+            padding: 0.1vw 0.15vw;
+            margin-right: 0.2vw;
+            line-height: 1;
+            @include text-styles(0.43vw, 600, $role-color-secondary, left, $primary-font-family);
+          }
+
+          img {
+            user-select: none;
+            border: 0.05vw solid white;
+            @include img-styles(1.09vw, 1.09vw, cover, 50%);
+          }
+
+          div.avatar_skeleton {
+            width: 1.09vw;
+            height: 1.09vw;
+
+            span {
+              width: 1.09vw;
+              height: 1.09vw;
+            }
+          }
+        }
+
+        .managers, .administrators {
+          margin-right: 1vw;
+        }
+
+        .administrators span {
+          border-color: $mandatory-field-color;
+          color: $mandatory-field-color;
+        }
+      }
+    }
+
+    .team_actions {
+      flex: 1.2;
+      display: flex;
+      @include flex-box(space-between, center, row);
+
+      .date {
+        width: 100%;
+        display: flex;
+        @include flex-box(flex-end, center, row);
+
+        .calendar {
+          margin-right: 0.4vw;
+          @include icon-styles(1.2vw, 1.2vw, "icon-calendar.svg", auto);
+        }
+
+        p {
+          margin-bottom: 0;
+          line-height: 1;
+          @include text-styles(0.82vw, 500, $user-profile-name-color, left, $primary-font-family);
+        }
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0 0 0.55vw $filter-remove-btn-color;
+  }
+}
+
+@include tablet-media {
+  .team_search_result {
+    .item_main_content {
+      height: 10vw;
+      padding: 0 1.05vw 0 1.85vw;
+
+      .team_short_info {
+        .name_sect {
+          margin-right: 1vw;
+
+          h3 {
+            font-size: 2.604vw;
+            margin-right: 1vw;
+            max-width: 25vw;
+          }
+        }
+
+        .count_sect {
+          display: none;
+        }
+
+        .users_by_role {
+          > div {
+            span {
+              font-size: 1.172vw;
+              padding: 0.326vw 0.521vw;
+            }
+
+            img,
+            div.avatar_skeleton,
+            div.avatar_skeleton span {
+              width: 2.604vw;
+              height: 2.604vw;
+            }
+          }
+        }
+      }
+
+      .team_actions {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mobile-media {
+  .team_search_result {
+    .item_main_content {
+      height: unset;
+      padding: 6.2vw 5.5vw;
+
+      .team_short_info {
+        flex-wrap: wrap;
+
+        .name_sect {
+          width: 100%;
+          flex: unset;
+          margin-right: 0;
+          margin-bottom: 3vw;
+
+          h3 {
+            font-size: 5.067vw;
+            margin-right: 2vw;
+            max-width: 74.6vw;
+          }
+          .color_sect {
+            min-width: 18px;
+            min-height: 18px;
+            max-width: 18px;
+            max-height: 18px;
+          }
+        }
+
+        .count_sect {
+          display: none;
+        }
+
+        .users_by_role {
+          > div {
+            span {
+              font-size: 2.400vw;
+              padding: 0.667vw 1.067vw;
+            }
+
+            img,
+            div.avatar_skeleton,
+            div.avatar_skeleton span {
+              width: 5.333vw;
+              height: 5.333vw;
+            }
+          }
+
+          .managers, .administrators {
+            margin-right: 1.5vw;
+          }
+        }
+      }
+
+      .team_actions {
+        display: none;
+      }
+    }
+  }
+}
