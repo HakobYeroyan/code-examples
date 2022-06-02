@@ -1,0 +1,222 @@
+@import "src/assets/sass/mixin";
+@import "src/assets/sass/variables";
+
+.Address__back-btn {
+  margin-top: 23px;
+}
+.Address-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  .Address-form__submit {
+    border-radius: 80px;
+  }
+}
+
+.Address-form__heading {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 17px 0 14px;
+  color: $color-black-heading;
+}
+.Address-form__business {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  &:nth-of-type(3) {
+    .Address-form__businessAddress {
+      margin-top: 24px;
+
+    }
+  }
+}
+.Address-form__businessAddress {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  padding: 25px 15px;
+  box-shadow: 0 0 6px #93939329;
+  border: 1px solid #DDE8FE;
+  border-radius: 9px;
+  max-width: 735px;
+  width: 100%;
+}
+.Address-form__formGroup {
+  @include flexDirJustAlignWidth(row, space-between, flex-start, 100%);
+
+  &.Address-form__formGroup_locations {
+    margin-top: 27px;
+  }
+}
+.Address-form__formItem_address {
+  width: 50%;
+
+  &.Address-form__formItem_address1 {
+    padding-right: 9px;
+  }
+  &.Address-form__formItem_address2 {
+    padding-left: 9px;
+  }
+}
+.Address-form__formGroup_formRow {
+  @include flexDirJustAlignWidth(row, flex-start, space-between, 50%);
+  padding-right: 9px;
+}
+.Address-form__formItem_location {
+  width: 50%;
+
+  &.Address-form__formItem_city {
+    padding-left: 9px;
+  }
+  &.Address-form__formItem_province {
+    padding-right: 7px;
+  }
+  &.Address-form__formItem_postalCode {
+    padding-left: 7px;
+  }
+}
+.Address-form__formItem_city {
+  width: 50%;
+}
+.Address-form__divider {
+  margin: 17px 0 0;
+  height: 6px;
+  width: 100%;
+  background: #707070;
+  opacity: .13;
+  border-radius: 6px;
+}
+
+.Address-form__additional {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 50%);
+  box-shadow: 0 0 6px #93939329;
+  border: 1px solid #DDE8FE;
+  border-radius: 9px;
+  padding: 17px 14px;
+  margin-top: 18px;
+  max-width: 414px;
+  width: 100%;
+
+  .Address-form__additional_link {
+    color: $color-link2;
+    padding: 10px;
+    background-color: #F7F7F7;
+    border-radius: 22px;
+    margin-top: 10px;
+    font-size: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+    .Address-form__additional_link_iconWrapper {
+      margin-left: 13px;
+      svg {
+        display: block;
+      }
+    }
+  }
+}
+.Address-form__additional_par,
+.Address-form__additional_bill {
+  color: $color-language;
+}
+.Address-form__additional_par {
+  font-size: 13px;
+  max-width: 317px;
+}
+.Address-form__additional_bill {
+  font-size: 23px;
+  font-weight: 600;
+}
+.Address-form__extra {
+  color: $color-language;
+  margin: 18px 0 24px;
+  opacity: .47;
+  font-size: 11px;
+  max-width: 376px;
+}
+
+.Province__custom-select {
+  width: 50%;
+  :global {
+    .select-box {
+
+      &:hover {
+        cursor: pointer;
+      }
+      .selected-item {
+        padding: 1.39rem .8rem;
+
+        .selected-item-span {
+          margin-left: 7px;
+          color: #576B89;
+        }
+      }
+
+      .arrow-box {
+        svg path {
+          stroke: #F55757;
+        }
+      }
+
+      .option-list {
+        background-color: #E6EAF0;
+
+        li {
+          font-size: 15px;
+          color: $color-language;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .Address-form__formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    margin-top: 24px;
+
+    & > :last-child {
+      margin-top: 24px;
+    }
+  }
+  .Address-form__formItem_address,
+  .Address-form__formItem_city,
+  .Address-form__formGroup_formRow {
+    width: 100%;
+  }
+  .Address-form__formGroup_formRow {
+    padding-right: 0;
+  }
+  .Address-form__formItem_address {
+    &.Address-form__formItem_address1 {
+      padding-right: 0;
+    }
+    &.Address-form__formItem_address2 {
+      padding-left: 0;
+    }
+  }
+  .Address-form__formItem_location {
+    &.Address-form__formItem_city {
+      padding-left: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .Address-form__formGroup_formRow {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .Address-form__formItem_location {
+    width: 100%;
+
+    &.Address-form__formItem_province {
+      padding-right: 0;
+    }
+    &.Address-form__formItem_postalCode {
+      padding-left: 0;
+      margin-top: 24px;
+    }
+  }
+}

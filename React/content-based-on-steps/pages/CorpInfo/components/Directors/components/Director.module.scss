@@ -1,0 +1,167 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Director {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  padding: 19px 35px;
+  margin-top: 25px;
+  box-shadow: 0 0 6px #93939329;
+  border: 1px solid #DDE8FE;
+  border-radius: 9px;
+  .Director-submit {
+    border-radius: 80px;
+  }
+}
+.Director-heading {
+  font-weight: 600;
+  font-size: 28px;
+  color: #555555;
+  margin-bottom: 13px;
+}
+.Director-fields {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+.Director-fields__row {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+
+  &:nth-child(2) {
+    margin-top: 27px;
+  }
+}
+.Director-field__firstName,
+.Director-field__lastName,
+.Director-field__city,
+.Director-field__province {
+  width: 24%;
+}
+.Director-field__Address,
+.Director-field__Address2,
+.Director-field__postalCode,
+.Director-field__email {
+  width: 26%;
+}
+.Director-fields__field {
+  padding: 0 10px;
+  &:first-child {
+    padding-left: 0;
+  }
+  &:last-child {
+    padding-right: 0;
+  }
+}
+.Director-divider {
+  margin: 25px 0 22px;
+  background-color: #707070;
+  height: 1px;
+  width: 100%;
+  opacity: .16;
+}
+.Director-additional {
+  @include flexDirJustAlignWidth(row, flex-start, flex-start, 100%);
+}
+.Director-officer {
+  margin-right: 29px;
+  max-width: 239px;
+  width: 100%;
+}
+.Director-shareholder {
+  max-width: 272px;
+  width: 100%;
+}
+.Director-officer,
+.Director-shareholder {
+  &__question {
+    color: $color-language;
+    margin-bottom: 14px;
+    opacity: .47;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+  }
+  &__input {
+    margin-top: 23px;
+  }
+}
+.Director-submit {
+  margin-left: auto;
+  align-self: flex-end;
+  border-radius: 45px;
+}
+.Director__custom-select,
+.Province__custom-select {
+  :global {
+    .select-box {
+
+      &:hover {
+        cursor: pointer;
+      }
+      .selected-item {
+        padding: 1.39rem .8rem;
+
+        .selected-item-span {
+          margin-left: 7px;
+          color: #576B89;
+        }
+      }
+
+      .arrow-box {
+        svg path {
+          stroke: #F55757;
+        }
+      }
+
+      .option-list {
+        background-color: #E6EAF0;
+
+        li {
+          font-size: 15px;
+          color: $color-language;
+        }
+      }
+    }
+  }
+}
+
+.Director__custom-select1{
+  margin-top: 23px;
+  width: 25%;
+}
+
+.Province__custom-select1{
+  width: 25%;
+}
+
+@media only screen and (max-width: 992px) {
+  .Director-fields__row {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    &:last-child {
+      margin-top: 24px;
+    }
+  }
+  .Director-fields__field {
+    width: 100%;
+    padding: 0;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  .Director-additional {
+    flex-direction: column;
+  }
+  .Director-shareholder,
+  .Director-officer {
+    max-width: unset;
+  }
+  .Director-shareholder {
+    margin-top: 8px;
+    margin-bottom: 10px;
+  }
+  .Director-submit {
+    margin-left: initial;
+    align-self: flex-end;
+  }
+}

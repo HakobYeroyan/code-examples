@@ -1,0 +1,48 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.ProfileDetails {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  margin-top: 60px;
+}
+.ProfileDetails-heading {
+  font-size: 28px;
+  color: #000000;
+  font-weight: 600;
+}
+.ProfileDetails-content {
+  @include flexDirJustAlignWidth(row, flex-start, flex-start, 100%);
+  flex-wrap: wrap;
+  max-width: 519px;
+  background-color: $color-white;
+  padding: 42px 24px 26px;
+  box-shadow: 0 0 6px #93939329;
+  border: 1px solid #DDE8FE;
+  border-radius: 9px;
+}
+.ProfileDetails-info {
+  width: calc(50% - 10px);
+  position: relative;
+  border-radius: 5px;
+  border: solid 2px #E6EAEF;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+  .ProfileDetails-info__value {
+    color: #000000;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ProfileDetails-info__label {
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    background-color: white;
+    padding: 0 5px;
+  }
+}

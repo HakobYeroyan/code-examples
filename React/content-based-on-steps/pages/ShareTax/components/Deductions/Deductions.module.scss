@@ -1,0 +1,241 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Deduction__back-btn {
+  margin: 25px 0;
+}
+.Deduction-form__divider {
+  background-color: #707070;
+  height: 1px;
+  width: 100%;
+  opacity: .34;
+}
+.Deduction-form__faq {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    path {
+      fill: #0366F5;
+    }
+  }
+}
+.Deduction-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  .Deduction-form__submit {
+    border-radius: 80px;
+  }
+}
+.Deduction-form__formGroup {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+
+  &.Deduction-form__formGroup_DAS {
+    position: relative;
+    margin-bottom: 15px;
+
+    .Deduction-form__faq {
+      &:hover {
+        & + .Deduction-form__formGroup_DAS_helpText {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    :global {
+      .errorMessage {
+        position: absolute;
+        right: 0;
+        bottom: -15px;
+      }
+    }
+
+
+    .Deduction-form__radioRow {
+      margin-left: 156px;
+    }
+
+    .Deduction-form__DAS_radio {
+      &:nth-child(2) {
+        margin: 0 22px 0 26px;
+      }
+    }
+  }
+
+
+  &.Deduction-form__formGroup_incomeTax {
+    position: relative;
+    :global {
+      .errorMessage {
+        position: absolute;
+        right: 0;
+        bottom: -15px;
+      }
+    }
+
+
+    .Deduction-form__radioRow {
+      margin-left: 243px;
+    }
+    .Deduction-form__incomeTax_radio {
+      &:nth-child(2) {
+        margin: 0 22px 0 26px;
+      }
+    }
+  }
+
+  &.Deduction-form__formGroup_minuteBook {
+    position: relative;
+
+    :global {
+      .errorMessage {
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+      }
+    }
+    .Deduction-form__radioRow {
+      .Deduction-form__minuteBox_radio {
+        &:first-child {
+          margin-right: 32px;
+        }
+      }
+    }
+  }
+}
+.Deduction-form__question {
+  color: #6C6C6C;
+  flex: 1;
+}
+.Deduction-form__radioRow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Deduction-form__descriptionGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+}
+.Deduction-form__description {
+  color: $color-black-heading;
+  font-size: 21px;
+  font-weight: 700;
+}
+.Deduction-form__subDescription {
+  color: $color-text;
+  font-size: 14px;
+}
+.Deduction-form__fiscal {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  .Deduction-form__descriptionGroup {
+    .Deduction-form__subDescription {
+      margin-top: 11px;
+    }
+  }
+}
+.Deduction-form__dataPicker {
+  @include flexDirJustAlignWidth(row, flex-start, center, 100%);
+  margin-top: 18px;
+}
+.Deduction-form__dataPicker_fields {
+  @include flexDirJustAlignWidth(row, flex-start, center, initial);
+  padding: 24px 20px;
+  border: solid 1px #DDE8FE;
+  box-shadow: 0 0 6px #93939329;
+  border-radius: 9px;
+  margin-right: 16px;
+
+
+  .Deduction-form__dataPicker_field {
+    &:nth-child(2) {
+      margin: 0 11px;
+    }
+  }
+
+  .Deduction-form__dataPicker_field_day,
+  .Deduction-form__dataPicker_field_month {
+    width: 88px;
+  }
+
+  .Deduction-form__dataPicker_field_year {
+    width: 117px;
+  }
+}
+.Deduction-form__dataPicker_help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .Deduction-form__faq {
+    margin-right: 8px;
+
+    &:hover {
+      & + .Deduction-form__dataPicker_help_helpText {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  .Deduction-form__formGroup {
+    &.Deduction-form__formGroup_DAS,
+    &.Deduction-form__formGroup_incomeTax {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .Deduction-form__radioRow {
+        margin-top: 4px;
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .Deduction-form__question {
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  &.Deduction-form__formGroup_minuteBook {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .Deduction-form__radioRow {
+      width: 100%;
+      justify-content: flex-start;
+    }
+    .Deduction-form__descriptionGroup {
+      width: 100%;
+    }
+  }
+
+  .Deduction-form__dataPicker {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .Deduction-form__dataPicker_fields {
+    margin-right: 0;
+  }
+  .Deduction-form__dataPicker_help {
+    margin-top: 8px;
+  }
+}

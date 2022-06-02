@@ -1,0 +1,6 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Dashboard {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}

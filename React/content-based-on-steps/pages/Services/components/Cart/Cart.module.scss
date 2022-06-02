@@ -1,0 +1,92 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Cart {
+  max-width: 288px;
+  width: 100%;
+  height: calc(100% + 69px);
+  margin-top: -69px;
+
+
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  .Cart__submit-btn {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 80px;
+    margin-top: auto;
+  }
+}
+.Cart-heading {
+  padding: 0 18px;
+  height: 69px;
+  background-color: $color-black-heading;
+  color: $color-white;
+  font-size: 20px;
+  font-weight: 500;
+
+  @include flexDirJustAlignWidth(row, flex-start, center, 100%);
+}
+.Cart-content {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  flex: 1;
+  background-color: #EBEBEB;
+  padding: 22px 18px 20px;
+}
+.Cart-bill {
+  margin-bottom: 20px;
+}
+.Cart-bill__standard,
+.Cart-bill__fees {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+
+  &_value {
+    flex: 1;
+    color: $color-language;
+    font-weight: 600;
+  }
+
+  &_amount {
+    margin-left: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3283F5;
+
+    &::before {
+      content: "$";
+    }
+  }
+}
+.Cart-bill__standard {
+  &_value {
+    font-size: 15px;
+  }
+}
+.Cart-bill__fees {
+  margin-top: 8px;
+  &_value {
+    font-size: 13px;
+    opacity: .38;
+  }
+}
+.Cart-divider {
+  width: 100%;
+  height: 1px;
+  margin-top: 19px;
+  background-color: #707070;
+  opacity: .34;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .Cart {
+    margin-top: 0;
+    max-width: unset;
+  }
+  .Cart-bill {
+    width: 100%;
+  }
+}

@@ -1,0 +1,102 @@
+@import "src/assets/sass/mixin";
+@import "src/assets/sass/variables";
+
+.BusinessActivity__back-btn {
+  margin-top: 38px;
+}
+.BusinessActivity-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  margin-top: 16px;
+}
+.BusinessActivity-form__formGroup {
+  @include flexDirJustAlignWidth(row, space-between, flex-end, 100%);
+
+  &.BusinessActivity-form__formGroup_amounts {
+    align-items: flex-start;
+  }
+}
+.BusinessActivity-form__label {
+  font-size: 24px;
+  max-width: 377px;
+  color: $color-black-heading;
+
+  &.BusinessActivity-form__label_amounts {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-weight: 700;
+
+    .BusinessActivity-form__label_amounts_faq {
+      margin-left: 8px;
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+
+        & + .BusinessActivity-HelpText {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+.BusinessActivity-form__input_wrapper {
+  border-radius: 6px;
+  border: 1px solid #DDE8FE;
+  padding: 13px 10px 9px;
+  max-width: 452px;
+  width: 100%;
+
+  .BusinessActivity-form__input {
+    label { // Todo: Remove in future
+      left: 11px;
+      top: 18px;
+      padding: 0;
+      color: #535353;
+    }
+  }
+}
+.BusinessActivity-form__formGroup_secondaryActivity {
+  margin: 87px 0 81px;
+}
+.BusinessActivity-form__amounts {
+  max-width: 452px;
+  width: 100%;
+
+  :global {
+    .continue {
+      margin-top: 57px;
+    }
+  }
+}
+.BusinessActivity-form__amounts_wrapper {
+  @include flexDirJustAlignWidth(row, flex-start, flex-start, 100%);
+  flex-wrap: wrap;
+}
+.BusinessActivity-form__amounts_amount {
+  width: 33.33333333333%;
+  &:last-child {
+    margin-top: 34px;
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  .BusinessActivity-form__formGroup {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .BusinessActivity-form__formGroup_secondaryActivity {
+    margin: 40px 0;
+  }
+  .BusinessActivity-form__label {
+    max-width: unset;
+    margin-bottom: 8px;
+  }
+  .BusinessActivity-form__input_wrapper {
+    max-width: unset;
+  }
+}

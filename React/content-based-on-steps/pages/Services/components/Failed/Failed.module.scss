@@ -1,0 +1,47 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Failed {
+  max-width: 447px;
+  width: 100%;
+  height: calc(100% + 69px);
+  margin-top: -69px;
+  padding: 30px 23px 0;
+  background-color: #EBF0F4;
+
+  @include flexDirJustAlignWidth(column, flex-start, center, 100%);
+
+  .Failed-tryAgain {
+    border-radius: 80px;
+    margin-top: 20px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.Failed-message {
+  padding: 35px 0 36px;
+  background-color: $color-white;
+  border-radius: 39px;
+
+  @include flexDirJustAlignWidth(column, center, center, 100%);
+}
+.Failed-message__content {
+  text-align: center;
+  color: #000000;
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 28px;
+  line-height: 1.4;
+}
+
+.Failed-imgWrapper {
+  max-width: 280px;
+  width: 100%;
+  margin-top: auto;
+}
+.Failed-img {
+  width: 100%;
+  display: block;
+}

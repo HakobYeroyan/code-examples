@@ -1,0 +1,79 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.MostRecentOrders {
+  box-shadow: 0 0 6px #939393;
+  background-color: $color-white;
+  border-radius: 9px;
+
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+
+.MostRecentOrders-top {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+  padding: 9px 116px 9px 21px;
+  border-bottom: 1px solid rgba(212,214,221, .5);
+
+}
+.MostRecentOrders-top__heading {
+  color: #354052;
+  font-size: 24px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.MostRecentOrders-main {
+  @include flexDirJustAlignWidth(row, flex-start, stretch, 100%);
+  padding: 11px 0;
+}
+
+
+// Order details modal
+.ModalBody {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+
+.ModalBody-top {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+
+  padding-bottom: 6px;
+  border-bottom: solid 1px rgba(112,112,112, 0.32);
+}
+.ModalBody-top__title {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 700;
+}
+.ModalBody-top__status {
+  color: #2EC114;
+  font-size: 14px;
+  font-weight: 700;
+}
+.ModalBody-details {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  margin-top: 11px;
+}
+.ModalElement {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  &:not(:first-child) {
+    margin-bottom: 9px;
+  }
+}
+.ModalElement-label {
+  color: #7F8FA4;
+  font-size: 12px;
+}
+.ModalElement-value {
+  color: #11141A;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+@media only screen and (max-width: 992px) {
+  .MostRecentOrders-main {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}

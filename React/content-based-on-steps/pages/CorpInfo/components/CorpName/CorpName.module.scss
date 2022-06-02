@@ -1,0 +1,69 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.CorpName__back-btn {
+  margin-top: 38px;
+}
+
+.CorpName-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  margin-top: 25px;
+}
+.CorpName-form__heading {
+  color: $color-black-heading;
+  font-size: 30px;
+}
+.CorpName-form__radioRow {
+  @include flexDirJustAlignWidth(row, flex-start, center, 100%);
+  margin-top: 20px;
+}
+.CorpName-form__radio_named {
+  margin-right: 48px;
+}
+.CorpName-form__parContainer {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  padding: 14px 21px 9px 15px;
+  background-color: #F2F2F2;
+  border-radius: 14px;
+  color: #000000;
+  font-size: 15px;
+  margin-top: 15px;
+}
+.CorpName-form__extra {
+  margin-top: 24px;
+}
+.CorpName-form__formGroup {
+  @include flexDirJustAlignWidth(row, flex-start, center);
+  margin-top: 42px;
+}
+.CorpName-form__input {
+  &.CorpName-form__input_english, &.CorpName-form__input_french {
+    max-width: 265px;
+    margin-right: 17px;
+  }
+  &.CorpName-form__input_why {
+    flex: 1;
+  }
+}
+.CorpName-form_submit {
+  margin-top: 29px;
+}
+
+@media only screen and (max-width: 992px) {
+  .CorpName-form__formGroup {
+    flex-direction: column;
+  }
+  .CorpName-form__input {
+    width: 100%;
+
+    &.CorpName-form__input_english,
+    &.CorpName-form__input_french {
+      max-width: unset;
+      margin-right: 0;
+    }
+
+    &.CorpName-form__input_french {
+      margin: 24px 0;
+    }
+  }
+}

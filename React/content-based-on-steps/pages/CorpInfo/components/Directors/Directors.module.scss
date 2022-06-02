@@ -1,0 +1,41 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Directors__back-btn {
+  margin: 22px 0;
+}
+
+.Directors-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+.Directors-form__heading {
+  color: $color-black-heading;
+  font-weight: 500;
+  font-size: 19px;
+}
+.Directors__custom-select {
+  max-width: 257px;
+  width: 100%;
+  margin-top: 16px;
+
+  :global {
+    .select-box {
+      &:hover {
+        cursor: pointer;
+      }
+
+      .selected-item {
+        .selected-item-span {
+          margin-left: 7px;
+          color: $color-language;
+        }
+      }
+
+      .arrow-box {
+        svg path {
+          stroke: #F55757;
+        }
+      }
+    }
+  }
+}

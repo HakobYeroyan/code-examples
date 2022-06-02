@@ -1,0 +1,81 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.InProcess {
+  max-width: 447px;
+  width: 100%;
+  height: calc(100% + 69px);
+  margin-top: -69px;
+  padding: 0 12px 9px;
+  background-color: #ACC8D5;
+
+  .InProcess-submit {
+    border-radius: 80px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 13px;
+  }
+}
+.InProcess-content {
+  height: 100%;
+  padding: 16px 18px 35px;
+  background: #F3F7FA;
+  border-radius: 0 0 14px 14px;
+
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+.InProcess-top__cancel {
+  &:hover {
+    cursor: pointer;
+  }
+}
+.InProcess-StripeFieldWrapper {
+  width: 100%;
+  border: solid 1px #cccccc;
+  border-radius: 14px;
+  padding: 6px;
+}
+.InProcess-top {
+  margin-bottom: 14px;
+
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+}
+.InProcess-top__heading {
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.InProcess-additional {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  margin-top: 11px;
+}
+.InProcess-additional__heading {
+  color: #000000;
+  opacity: .47;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.InProcess-additional__fields {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  background: $color-white;
+  border-radius: 14px;
+  padding: 16px 10px;
+}
+.InProcess-additional__fields_field {
+  width: 100%;
+  &:not(:first-child) {
+    margin-top: 25px;
+  }
+}
+
+
+@media only screen and (max-width: 992px) {
+  .InProcess {
+    margin-top: 0;
+    max-width: unset;
+  }
+}

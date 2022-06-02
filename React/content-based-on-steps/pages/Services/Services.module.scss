@@ -1,0 +1,65 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Services__back-btn {
+  margin-top: 8px;
+}
+.Services-divider {
+  background-color: #707070;
+  margin: 26px 0 21px;
+  width: 100%;
+  height: 1px;
+  opacity: .34;
+}
+.Services-paymentCard {
+  background-color: #EAF7FD;
+  border-radius: 8px;
+  max-width: 322px;
+  padding: 12px;
+
+  @include flexDirJustAlignWidth(column, center, center, 100%);
+}
+.Services-paymentCard__heading {
+  color: $color-language;
+  font-weight: 600;
+  font-size: 21px;
+  text-align: center;
+  max-width: 93%;
+  text-transform: capitalize;
+}
+.Services-paymentCard__divider {
+  width: 100%;
+  height: 1px;
+  background-color: #D6EBF7;
+}
+.Services-paymentCard__amount {
+  position: relative;
+  color: $color-language;
+  font-size: 61px;
+  font-weight: 600;
+  padding-left: 34px;
+
+  &::before {
+    content: "$";
+    opacity: .51;
+    font-size: 38px;
+    margin: auto 0;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.Services-paymentCard__amountAdditional {
+  color: #7890AF;
+  font-size: 13px;
+}
+.Services-paymentCard__list {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+}
+.Services-paymentCard__list_item {
+  color: #6D7B8D;
+  font-size: 13px;
+  font-weight: 600;
+}

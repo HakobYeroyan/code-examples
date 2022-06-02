@@ -1,0 +1,66 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+
+.MostRecentOrderCard__wrapper {
+  padding: 0 8px;
+  width: 25%;
+}
+
+.MostRecentOrderCard {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  background-color: #F4F4F4;
+  border-radius: 10px;
+  padding: 11px 21px;
+  height: 100%;
+}
+.MostRecentOrderCard-service,
+.MostRecentOrderCard-status {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  &__label {
+    color: #7F8FA4;
+    font-size: 12px;
+  }
+  &__value {
+    color: #11141A;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.MostRecentOrderCard-status {
+  margin-top: 9px;
+}
+.MostRecentOrderCard-payment {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+  border-top: 1px solid rgba(212,214,221, .5);
+  padding-top: 15px;
+  margin-top: 15px;
+
+  .MostRecentOrderCard-payment__status {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .MostRecentOrderCard-payment__details {
+    font-size: 14px;
+    color: $color-link;
+    font-weight: 700;
+    background-color: transparent;
+    font-family: inherit;
+    text-align: left;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .MostRecentOrderCard__wrapper {
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+}

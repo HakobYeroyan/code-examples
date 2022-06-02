@@ -1,0 +1,191 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.FillingFrequency__back-btn {
+  margin: 32px 0 34px;
+}
+
+.FillingFrequency-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+}
+.FillingFrequency-form__top {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+}
+.FillingFrequency-form__question {
+  color: $color-black-heading;
+  font-size: 21px;
+  font-weight: 600;
+}
+.FillingFrequency-form__formGroup {
+  box-shadow: 0 0 6px #93939329;
+  border: 1px solid #DDE8FE;
+  border-radius: 9px;
+}
+.FillingFrequency-form__filingFrequency {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+  padding: 19px 16px;
+  margin-top: 15px;
+
+  position: relative;
+
+  :global {
+    .errorMessage {
+      position: absolute;
+      bottom: 5px;
+      right: 16px;
+    }
+  }
+}
+.FillingFrequency-form__secondaryQuestion {
+  color: $color-black-heading;
+  font-size: 21px;
+  font-weight: 500;
+}
+.FillingFrequency-form__filingFrequency_question {
+  display: inline-flex;
+  align-self: center;
+  justify-content: flex-start;
+
+  button {
+    background-color: transparent;
+    margin-left: 5px;
+    
+    &:hover {
+      cursor: pointer;
+
+      & + .FillingFrequency-form__filingFrequency_helpText {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    svg {
+      path {
+        fill: #0366F5;
+      }
+    }
+  }
+}
+.FillingFrequency-form__filingFrequency__radioRow {
+  @include flexDirJustAlignWidth(row, flex-end, center, initial);
+}
+.FillingFrequency-form__filingFrequency__radio {
+  &:nth-child(2) {
+    margin: 0 24px;
+  }
+}
+.FillingFrequency-form__estimatedRevenue {
+  @include flexDirJustAlignWidth(row, space-between, center, 100%);
+  margin-top: 8px;
+  padding: 17px 16px;
+}
+.FillingFrequency-form__estimatedRevenue_input {
+  max-width: 194px;
+  label {
+    font-size: 13px;
+    padding-left: 14px
+  }
+  :global {
+    span.label-pre {
+      visibility: visible !important;
+      left: 14px !important;
+      font-size: 23px;
+      color: #3E3E3E;
+      opacity: .53;
+
+      &::before {
+        display: none;
+      }
+    }
+    input {
+      transition: padding .2s ease-in;
+      padding-left: 3.8rem;
+    }
+  }
+}
+.FillingFrequency-form__help {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+  padding: 20px 23px;
+  margin-top: 9px;
+
+  .FillingFrequency-form__help_radioCol {
+    @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+    .FillingFrequency-form__help__radio {
+      &:first-child {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+.FillingFrequency-form__help_description {
+  margin: 6px 0 18px;
+  font-weight: 500;
+  color: #6E82A3;
+}
+
+
+.FillingFrequency-form__questionGroup {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 32px 0 19px;
+
+  button {
+    background-color: transparent;
+    margin-left: 5px;
+
+    &:hover {
+      cursor: pointer;
+
+      & + .FillingFrequency-form__questionGroup_helpText {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    svg {
+      path {
+        fill: #0366F5;
+      }
+    }
+  }
+}
+.FillingFrequency-form__structure {
+  @include flexDirJustAlignWidth(row, flex-start, center, 100%);
+  padding: 23px;
+  position: relative;
+
+  :global {
+    .errorMessage {
+      position: absolute;
+      bottom: 5px;
+      left: 23px;
+    }
+  }
+
+  .FillingFrequency-form__help__radio {
+    &:first-child {
+      margin-right: 39px;
+    }
+  }
+}
+.FillingFrequency-form__submit {
+  border-radius: 35px !important;
+  margin-top: 45px;
+  align-self: flex-end;
+}
+
+@media only screen and (max-width: 992px) {
+  .FillingFrequency-form__structure {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .FillingFrequency-form__help__radio {
+    &:last-child {
+      margin-top: 8px;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import "src/assets/sass/variables";
+@import "src/assets/sass/mixin";
+
+.Contact__back-btn {
+  margin-top: 26px;
+}
+.Contact-form {
+  @include flexDirJustAlignWidth(column, flex-start, flex-start, 100%);
+
+  .Contact-form__submit {
+    margin-top: 18px;
+    align-self: flex-end;
+    border-radius: 80px;
+  }
+}
+.Contact-form__heading {
+  color: $color-black-heading;
+  font-size: 21px;
+  font-weight: 700;
+  margin: 12px 0 16px;
+}
+.Contact-divider {
+  position: relative;
+  background-color: rgba(112, 112, 112,0.34);
+  width: 100%;
+  height: 1px;
+}
+.Contact-errorMessage {
+  color: #FF0000;
+  font-size: 13px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+
+// questions
+.ContactQuestion {
+  @include flexDirJustAlignWidth(row, space-between, flex-start, 100%);
+
+  &:not(:last-child) {
+    margin-bottom: 21px;
+  }
+  &:last-child {
+    margin-bottom: 31px;
+  }
+
+  &:hover {
+    .ContactQuestion-label {
+      color: $color-black-heading;
+    }
+  }
+}
+.ContactQuestion-label {
+  font-size: 18px;
+  flex: 1;
+  color: #878787;
+  transition: color .2s ease-in;
+}
+.ContactQuestion-radioRaw {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+
+
+
+  .ContactQuestion-radio {
+    &:first-child {
+      margin-right: 21px;
+    }
+
+  }
+}
+.ContactQuestion-faqBtn {
+  background-color: transparent;
+  border: none;
+  margin-left: 5px;
+  
+  svg path {
+    fill: #0366F5;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & + .ContactQuestion-helpText {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
