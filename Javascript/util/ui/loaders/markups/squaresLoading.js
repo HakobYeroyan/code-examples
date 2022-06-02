@@ -1,0 +1,1 @@
+export default '<div class="loadingio-spinner-cube-24bb4dcxo43"><div class="ldio-aj76mwds4n9"><div></div><div></div><div></div><div></div></div></div>';
